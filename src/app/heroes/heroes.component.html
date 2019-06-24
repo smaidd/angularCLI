@@ -2,6 +2,14 @@
 <ul class="heroes">
   <li *ngFor="let hero of listOfHeroes">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <button (click) = "delete(hero)">Delete</button>
   </li>
+  <div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
 </ul>
-
